@@ -1,6 +1,9 @@
 #!/bin/bash
 
 apply_macos_settings_impl() {
+    # Set default browser
+    open -a "Arc" --args --make-default-browser
+    
     # Show hidden files in Finder
     defaults write com.apple.finder AppleShowAllFiles -bool true
 
@@ -37,7 +40,7 @@ apply_macos_settings_impl() {
     defaults write com.apple.LaunchServices LSQuarantine -bool false
 
     # Restart affected applications
-    for app in "Finder" "Dock" "SystemUIServer"; do
+    for app in "Finder" "Dock" "SystemUIServer" "Arc"; do
         killall "${app}" &> /dev/null
     done
 
