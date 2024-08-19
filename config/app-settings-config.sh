@@ -5,11 +5,39 @@ apply_app_settings_impl() {
     install_code_extensions() {
         local cmd=$1
         echo "Installing extensions for $cmd..."
-        $cmd --install-extension ms-python.python
-        $cmd --install-extension dbaeumer.vscode-eslint
-        $cmd --install-extension esbenp.prettier-vscode
-        $cmd --install-extension ms-azuretools.vscode-docker
+        $cmd --install-extension aaron-bond.better-comments
+        $cmd --install-extension astro-build.astro-vs$cmd
+        $cmd --install-extension astro-build.houston
+        $cmd --install-extension bmewburn.vs$cmd-intelephense-client
+        $cmd --install-extension bradlc.vs$cmd-tailwindcss
+        $cmd --install-extension dracula-theme.theme-dracula
         $cmd --install-extension eamodio.gitlens
+        $cmd --install-extension ecmel.vs$cmd-html-css
+        $cmd --install-extension esbenp.prettier-vs$cmd
+        $cmd --install-extension github.copilot
+        $cmd --install-extension github.copilot-chat
+        $cmd --install-extension github.remotehub
+        $cmd --install-extension github.vs$cmd-github-actions
+        $cmd --install-extension github.vs$cmd-pull-request-github
+        $cmd --install-extension ibm.output-colorizer
+        $cmd --install-extension kamikillerto.vs$cmd-colorize
+        $cmd --install-extension lovebird.better-comments-enhanced
+        $cmd --install-extension ms-azuretools.vs$cmd-docker
+        $cmd --install-extension ms-python.debugpy
+        $cmd --install-extension ms-python.python
+        $cmd --install-extension ms-python.vs$cmd-pylance
+        $cmd --install-extension ms-vs$cmd-remote.remote-containers
+        $cmd --install-extension ms-vs$cmd.azure-repos
+        $cmd --install-extension ms-vs$cmd.live-server
+        $cmd --install-extension ms-vs$cmd.remote-repositories
+        $cmd --install-extension oderwat.indent-rainbow
+        $cmd --install-extension pranaygp.vs$cmd-css-peek
+        $cmd --install-extension rajeshrenato.workspace-colors
+        $cmd --install-extension streetsidesoftware.$cmd-spell-checker
+        $cmd --install-extension unifiedjs.vs$cmd-mdx
+        $cmd --install-extension vs$cmd-icons-team.vs$cmd-icons
+        $cmd --install-extension yoavbls.pretty-ts-errors
+        $cmd --install-extension yzhang.markdown-all-in-one
         # Add more extensions here as needed
     }
 
