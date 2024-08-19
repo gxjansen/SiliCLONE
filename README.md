@@ -30,20 +30,24 @@ SiliCLONE is a powerful script that automates the process of setting up a new ma
 To run SiliCLONE with default settings:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/your-repo/main/siliclone.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/your-repo/main/bootstrap.sh)"
 ```
 
 ### Additional Options
 
-- Verbose mode: Add `--verbose` at the end of the command
-- Update script and configurations: Add `--update` at the end of the command
-- Resume a previous installation: Add `--resume` at the end of the command
+You can pass additional options to the SiliCLONE script:
+
+- Verbose mode: Add `-- --verbose` at the end of the command
+- Update script and configurations: Add `-- --update` at the end of the command
+- Resume a previous installation: Add `-- --resume` at the end of the command
 
 Example:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/your-repo/main/siliclone.sh)" -- --verbose
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/yourusername/your-repo/main/bootstrap.sh)" -- --verbose
 ```
+
+The bootstrap script will download all necessary files to a temporary directory, run the main SiliCLONE script, and then clean up after itself.
 
 ## Customization
 
@@ -76,6 +80,11 @@ Modify `config/app_settings.sh` to customize application-specific settings and e
 ```
 .
 ├── siliclone.sh
+├── utils.sh
+├── homebrew_install.sh
+├── mas_install.sh
+├── key_setup.sh
+├── system_setup.sh
 ├── README.md
 └── config
     ├── user_settings.sh
@@ -87,14 +96,13 @@ Modify `config/app_settings.sh` to customize application-specific settings and e
 
 ## How It Works
 
-1. The script starts by parsing command-line arguments and sourcing configuration files.
-2. It prompts the user to choose between Desktop and Laptop scenarios.
-3. Homebrew is installed if not already present.
-4. Software is installed based on the chosen scenario and configurations.
-5. SSH and GPG keys are set up for GitHub.
-6. macOS settings are applied.
-7. Application-specific settings and extensions are configured.
-8. Cleanup is performed, and Homebrew auto-update is set up.
+1. The main script (`siliclone.sh`) orchestrates the entire process.
+2. Utility functions are stored in `utils.sh`.
+3. Homebrew installation and package management are handled by `homebrew_install.sh`.
+4. Mac App Store installations are managed by `mas_install.sh`.
+5. SSH and GPG key setup is performed by `key_setup.sh`.
+6. System and application settings are applied by `system_setup.sh`.
+7. Configuration files in the `config` directory determine which software to install and what settings to apply.
 
 The script uses a progress tracking mechanism to allow for resuming interrupted installations.
 
