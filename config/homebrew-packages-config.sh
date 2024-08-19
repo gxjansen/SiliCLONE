@@ -1,12 +1,18 @@
 #!/bin/bash
 
+# COMMON: Installs in all scenario's (Desktop and Laptop)
+# DESKTOP: Installs in scenario 1 (Desktop)
+# LAPTOP: Installs in scenario 2 (Laptop)
+# See README for further details
+
+##### COMMON #####
+
 # Common Homebrew formulae for all scenarios
 COMMON_HOMEBREW_FORMULAE=(
     "git"
     "mas"
     "wget"
     "tree"
-    "jq"
     "htop"
     "python"
     "node"
@@ -14,34 +20,67 @@ COMMON_HOMEBREW_FORMULAE=(
 
 # Common Homebrew casks for all scenarios
 COMMON_HOMEBREW_CASKS=(
-    "firefox"
-    "visual-studio-code"
-    "iterm2"
+    "adobe-creative-cloud"
+    "caffeine"
+    "canva"       
+    "discord"
+    "miro"
+    "handbrake"
+    "keybase"
+    "logitech-presentation"
+    "synology-drive"
+    "bitwarden"
+    "steam"
+    "canon-eos-utility"
+    "obsidian"
+    "localsend"
+    "vscodium" 
+    "signal"
+    "telegram"
+    "whatsapp"
+    "raycast"
+    "ollama"
+    "plex"
+    "vlc"
     "rectangle"
+    "lulu"
+    "affinity-photo"
+    "brave-browser"
+    "asana"
+    "ytmdesktop-youtube-music"
+    "maccy"
+    "orbstack"
 )
 
 # Common Homebrew fonts for all scenarios
 COMMON_HOMEBREW_FONTS=(
-    "font-fira-code"
-    "font-roboto"
+    "font-jetbrains-mono"
+    "font-manrope"
 )
+
+##### DESKTOP ONLY #####
 
 # Desktop-only Homebrew formulae
 DESKTOP_HOMEBREW_FORMULAE=(
-    "docker"
-    "ansible"
 )
 
 # Desktop-only Homebrew casks
 DESKTOP_HOMEBREW_CASKS=(
     "docker"
     "virtualbox"
+    "MonitorControl"
+    "elgato-camera-hub"
+    "elgato-control-center"
+    "elgato-stream-deck"
+    "logitech-options"
 )
 
 # Desktop-only Homebrew fonts
 DESKTOP_HOMEBREW_FONTS=(
     # Add any desktop-specific fonts here
 )
+
+##### LAPTOP ONLY #####
 
 # Laptop-only Homebrew formulae
 LAPTOP_HOMEBREW_FORMULAE=(
