@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# User-specific settings
-USER_EMAIL="your_email@example.com"
-GITHUB_USERNAME="your_github_username"
+# User-specific settings, replace with your own email and username!
+USER_EMAIL="x@gui.do"
+GITHUB_USERNAME="gxjansen"
 
-# Add any other user-specific settings here
+# You can add any other user-specific settings here
 # For example:
 # PREFERRED_SHELL="/bin/zsh"
-# DEFAULT_BROWSER="Safari"
