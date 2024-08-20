@@ -29,6 +29,7 @@ COMMON_HOMEBREW_CASKS=(
     "canon-eos-utility"
     "canva"
     "capcut"
+    "chatgpt"
     "discord"
     "handbrake"
     "home-assistant"
@@ -53,12 +54,16 @@ COMMON_HOMEBREW_CASKS=(
     "vscodium"
     "whatsapp"
     "ytmdesktop-youtube-music"
+    "zoom"
 )
 
 # Common Homebrew fonts for all scenarios
 COMMON_HOMEBREW_FONTS=(
     "font-jetbrains-mono"
     "font-manrope"
+    "font-hack-nerd-font"
+    "font-fira-code"
+    "font-iosevka"
 )
 
 ##### DESKTOP ONLY #####
@@ -69,8 +74,6 @@ DESKTOP_HOMEBREW_FORMULAE=(
 
 # Desktop-only Homebrew casks
 DESKTOP_HOMEBREW_CASKS=(
-    "docker"
-    "virtualbox"
     "MonitorControl"
     "elgato-camera-hub"
     "elgato-control-center"
