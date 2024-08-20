@@ -1,5 +1,49 @@
 #!/bin/bash
 
+# Function to download and install external fonts
+install_external_fonts() {
+    local font_urls=(
+        "https://github.com/source-foundry/Hack/releases/download/v3.003/Hack-v3.003-ttf.zip"
+        # Add more font URLs here
+    )
+    local fonts_dir="$HOME/Library/Fonts"
+
+    echo "Downloading and installing external fonts..."
+    for url in "${font_urls[@]}"; do
+        local filename=$(basename "$url")
+        curl -L "$url" -o "/tmp/$filename"
+        
+        if [[ $filename == *.zip ]]; then
+            unzip -o "/tmp/$filename" -d "/tmp/fonts"
+            mv /tmp/fonts/*.ttf "$fonts_dir"
+            rm -rf "/tmp/fonts"
+        elif [[ $filename == *.ttf ]]; then
+            mv "/tmp/$filename" "$fonts_dir"
+        else
+            echo "Unsupported font format: $filename"
+        fi
+    done
+    echo "External fonts installed successfully."
+}
+
+# Function to download files for manual installation
+download_manual_installs() {
+    local manual_installs=(
+        "https://example.com/software1.dmg"
+        "https://example.com/software2.pkg"
+        # Add more URLs here
+    )
+    local download_dir="$HOME/Downloads/SiliCLONE_Manual_Installs"
+
+    echo "Downloading files for manual installation..."
+    mkdir -p "$download_dir"
+    for url in "${manual_installs[@]}"; do
+        local filename=$(basename "$url")
+        curl -L "$url" -o "$download_dir/$filename"
+    done
+    echo "Files for manual installation downloaded to $download_dir"
+}
+
 apply_app_settings_impl() {
     # Function to install VS Code / VSCodium extensions
     install_code_extensions() {
