@@ -2,7 +2,8 @@
 
 set -e
 
-REPO_URL="https://raw.githubusercontent.com/yourusername/your-repo/main"
+# Replace this with your own forked URL in case you make changes (which you should)
+REPO_URL="https://raw.githubusercontent.com/gxjansen/SiliCLONE/main"
 SCRIPT_FILES=(
     "siliclone.sh"
     "utils.sh"
